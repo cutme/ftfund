@@ -1,0 +1,5 @@
+.o-circle {
+    @extend %abs; z-index: -1;
+    background-color: $c-navy-01;
+    border-radius: 50%;
+}

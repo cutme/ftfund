@@ -1,0 +1,111 @@
+.c-steps {
+    margin-bottom: -700px;
+    padding: 70px 0 0 0;
+    
+    .o-wrap {
+        padding-bottom: 700px;
+    }
+    
+    .page-template-blue & {
+        background-color: $c-blue-03;
+    }
+
+    .page-template-green & {
+        background-color: $c-green-01;
+    }
+    
+    h2 {
+        @extend %lead--1;
+        white-space: nowrap;
+        color: white;
+    }
+    
+    h3 {
+        @extend %lead--3;
+    }
+    
+    ol {
+        @extend %flex;
+        @extend %flex-wrap;
+        @extend %flex-x;
+        counter-reset: section;
+        width: calc(100% + 40px);
+        margin: {
+            left: -20px;
+            right: -20px;
+        }
+        
+        img {
+            margin: 0 auto;
+            transform: translateX(20px);
+        }
+
+        li {
+            @extend %rel;
+            width: calc(100% / 3);
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 0 20px;
+            
+            &:not(:last-child) {
+                &:after {
+                    @extend %abs-pseudo;
+                    top: 50%;
+                    transform: translate3d(-50%, -10px, 0) translateX(15px);
+                    right: 0;
+                    font-family: $icomoon;
+                    font-size: rem(26);
+                    content: "\e906";
+                }
+            }
+            
+            figure {
+                div {
+                    @extend %rel;
+                    @extend %flex;
+                    align-items: flex-end;
+                    height: 205px;
+                    margin-bottom: 20px;
+                    
+                    &:before {
+                        @extend %abs-pseudo;
+                        @extend %lead--2;
+                        left: 0; top: 100%;
+                        width: 80px;
+                        transform: translateY(-100%);
+                        text-align: right;
+                        font-weight: $extrabold;
+                        counter-increment: section;
+                        content: counter(section, decimal) ". ";
+                        color: white;
+                    }
+                }
+            }
+
+            a {
+                text-decoration: underline;
+                font-weight: $bold;
+                color: $c-navy-01;
+                
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    .o-assets {
+        width: 977px;
+        height: 844px;
+        left: calc(50% - 977px/2 + 248.5px);
+        bottom: 300px;
+    }
+    
+    .o-cols {
+        margin-bottom: 100px;
+
+        &__item {
+            @extend %rel;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.o-container {
+    @extend %rel;
+    overflow: hidden;
+    
+    & > .o-assets {
+        left: calc(50% - 750.85px/2 - 431.58px);
+        top: -144px;
+    }
+}

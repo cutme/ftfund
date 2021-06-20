@@ -1,0 +1,60 @@
+.o-btn {
+    @extend %anim;
+    display: inline-flex;
+    @extend %flex-xy;
+    @extend %rel;
+    height: 47px;
+    white-space: nowrap;
+    padding: 0 40px 0 30px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font: {
+        family: $text;
+        size: rem(18);
+        weight: $bold;
+    }
+    cursor: pointer;
+   
+    &:after {
+        @extend %abs-pseudo;
+        @extend %abs-y;
+        right: 20px;
+        font: {
+            family: $icomoon;
+            size: rem(12);
+        }
+        content: "\e900";
+    }
+   
+    // Colors
+    
+    &--green {
+        background-color: $c-green-01;
+        color: white;
+        
+        &:hover {
+            background-color: darken($c-green-01, 5%);
+        }
+    }
+    
+    &--navy {
+        background-color: $c-navy-01;
+        color: white;
+        
+        &:hover {
+            background-color: darken($c-navy-01, 5%);
+        }
+    }
+    
+    span {
+        width: 100%;
+	}
+}
+
+a.o-btn,
+button.o-btn {
+//    .desktop & {
+    
+       
+//    }
+}

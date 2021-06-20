@@ -1,0 +1,75 @@
+.c-hero {
+    height: 743px;
+
+    .o-circle {
+        width: 1050px;
+        height: 1050px;
+        left: calc(50% - 1050px/2 + 222px);
+        top: -331px;
+        box-shadow: 12.8px 12.8px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    
+    
+    &__zenboy {
+        position: absolute;
+        width: 633px;
+        height: 501.54px;
+        left: -220px;
+        top: 207.12px;
+
+        img {
+            filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+        }
+    }
+    
+    .o-social {
+        @extend %rel; z-index: 10;
+        width: 100%;
+        margin: auto 0 0 0;
+        padding-left: 130px;
+        
+        ul {
+            @extend %flex;
+            
+            li {
+                &:not(:last-child) {
+                    padding-right: 20px;
+                }
+            }
+        }    
+    }
+    
+    .o-header {
+        @extend %abs;
+        @extend %flex;
+        @extend %flex-x;
+        @extend %flex-column;
+        width: $base + px;
+        height: 100%;
+        padding-left: 360px;
+        color: $c-white-01;
+        
+        h1 {
+            @extend %lead--1;
+            margin-bottom: .5em;
+        }
+        
+        p {
+            margin-bottom: 3.5em;
+        }
+        
+        .o-more {
+            text-align: right;
+        }
+    }
+
+    .o-wrap {
+        @extend %rel;
+        @extend %flex;
+        @extend %flex-y;
+        height: 100%;
+        justify-content: flex-end;
+    }
+
+}

@@ -1,0 +1,125 @@
+.c-clients {
+    overflow: hidden;
+    padding: {
+        top: 110px;
+        bottom: 40px;
+    }
+    
+    blockquote {
+        cite {
+            @extend %lead--3;
+            display: block;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+        
+        p {
+            @extend %lead--5;
+            white-space: nowrap;
+            
+            &:before {
+                content: '~ ';
+            }
+        }
+    }
+    
+    &__form {
+        input[type=text],
+        input[type=email],
+        input[type=url] {
+            color: white;
+        }
+        
+        .o-cols {
+            &__item {
+                width: 50%;
+            }
+        }
+    }
+    
+    &__reviews {
+        width: 852px;
+        margin: 0 0 0 auto;
+    }
+
+    .o-assets {
+        left: calc(50% - 750.85px/2 - 431.58px);
+        top: -150px;
+    }
+    
+    .o-cols {
+        &__item {
+            &:last-of-type {
+                @extend %rel;
+                width: 852px;
+                padding-top: 115px;
+                
+                &:before {
+                    @extend %abs-pseudo;
+                    font: {
+                        family: $icomoon;
+                        size: rem(42);
+                    }
+                    color: $c-navy-01;
+                    content: "\e904";
+                }
+            }            
+        }
+    }
+    
+    .o-girl {
+        width: 468px;
+        height: 721px;
+        margin: {
+            left: -296px;
+            top: -40px;
+        }
+
+        img {
+            max-width: none;
+        }
+    }
+
+    .o-header {
+        margin-bottom: 140px;
+        text-align: right;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 47px;
+        height: 47px;
+        background-color: $c-navy-01;
+        border-radius: 50%;
+        color: white;
+        
+        &:hover {
+            background-color: darken($c-navy-01, 5%)
+        }
+        
+        &:before {
+            font-family: $icomoon;
+            content: "\e900";
+        }
+    }
+    
+    .swiper-container {
+        padding: 0 115px 0 125px;
+    }
+    
+    .swiper-slide {
+        @extend %anim;
+        opacity: 0;
+        
+        &.swiper-slide-active {
+            opacity: 1;
+        }
+    }
+    
+    .swiper-button-prev {
+        left: 0;
+        &:before {
+            transform: scaleX(-1);
+        }
+    }
+}

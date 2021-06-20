@@ -1,0 +1,14 @@
+.o-social {
+    
+    ul {
+        @extend %flex;
+        
+        a {
+            display: block;
+
+            &:hover {
+                transform: translate3d(0, -5px, 0);
+            }
+        }
+    }    
+}

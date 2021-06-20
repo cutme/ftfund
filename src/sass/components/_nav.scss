@@ -1,0 +1,57 @@
+.c-nav {
+    margin: 0 0 0 auto;
+
+    &__menu {
+        ul {
+            @extend %flex;
+            
+            li {
+                padding: 0 20px;
+                
+                &:last-child {
+                    padding-right: 0;
+                }
+                
+                a {
+                    @extend %ulink;
+                    font-weight: $bold;
+                    color: white;
+                    
+                    .page-template-blue & {
+                        color: $c-navy-01;
+                    }
+                    
+                    &:hover {
+                        color: $c-green-01;
+                        
+                        .page-template-blue & {
+                            color: $c-white-01;
+                        }
+                        
+                        .page-template-green & {
+                            color: $c-blue-02;
+                        }
+                    }
+                    
+                    &:after, &:before {
+                        background-color: $c-green-01;
+                        
+                        .page-template-blue & {
+                            background-color: $c-white-01;
+                        }
+
+                        .page-template-green & {
+                            background-color: $c-blue-02;
+                        }
+                    }
+                }
+                
+                &.current-menu-item {
+                    a {
+                        color: $c-green-01;
+                    }
+                }
+            }
+        }
+    }
+}

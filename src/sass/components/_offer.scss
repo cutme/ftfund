@@ -1,0 +1,131 @@
+.c-offer {
+    overflow: hidden;
+
+    &__footer {
+        @extend %flex;
+        margin: auto 0 0 0 0;
+    }    
+    
+    .o-cols {
+        &__item {
+            @extend %rel;
+            @extend %flex;
+            @extend %flex-column;
+
+            width: 50%;
+            padding: {
+                top: 90px;
+            }
+            
+            &:before {
+                @extend %abs-pseudo; z-index: -1;
+                top: 0;
+                width: 200%; height: 100%;
+            }
+            
+            h2 {
+                font-weight: $extrabold;
+                color: white;
+            }
+            
+            &:first-of-type {
+                background-color: $c-green-01;
+                padding-right: 42px;
+                
+                &:before {
+                    left: 0; 
+                    transform: translateX(-100%);
+                    background-color: $c-green-01;
+                }
+                
+                .o-btn {
+                    margin: auto 0 60px auto;
+                }
+                
+                .o-image {
+                    height: 270px;
+                    margin-left: -255px;
+                    padding-top: 69px;
+                    
+                    &:before {
+                        left: 140px;
+                        opacity: .4;
+                        background-color: $c-green-01;
+                    }
+                }
+                
+                .o-num {
+                    right: 40px;
+                    color: $c-green-01;
+                }
+            }
+            
+            &:last-of-type {
+                background-color: $c-blue-03;
+                padding-left: 42px;
+                
+                &:before {
+                    right: 0; 
+                    transform: translateX(100%);
+                    background-color: $c-blue-03;
+                }
+                
+                .c-offer__footer {
+                    flex-direction: row-reverse;                    
+                }
+                
+                .o-btn {
+                    margin: auto auto 60px 0;
+                }
+                
+                .o-image {
+                    height: 280px;
+                    margin-right: -190px;
+                    padding-top: 98px;
+                    
+                    &:before {
+                        left: 0;
+                        opacity: .4;
+                        background-color: $c-blue-03;
+                    }
+                }
+                
+                .o-num {
+                    color: $c-blue-03;
+                }
+            }
+        }
+    }
+    
+    .o-image {
+        @extend %rel;
+        
+        img {
+            max-width: none;
+        }
+        
+        &:before {
+            @extend %abs-pseudo; z-index: -1;
+            left: 140px;
+            width: 428px; height: 232px;
+            opacity: .4;
+            background-image: url(../img/offer/estate-back.svg);
+            background-blend-mode: luminosity;
+            background-repeat: no-repeat;
+
+        }
+    }
+    
+    .o-num {
+        @extend %abs;
+        top: 15px;
+        right: 40px;
+        font: {
+            weight: $extrabold;
+            size: rem(288);
+        }
+        line-height: 1em;
+        mix-blend-mode: multiply;
+        opacity: 0.2;
+    }
+}

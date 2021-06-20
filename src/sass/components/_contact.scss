@@ -1,0 +1,82 @@
+.c-contact {
+    @extend %rel;
+    margin-top: -210px;
+    overflow: hidden;
+    
+    &__form {
+        font-weight: $regular;
+        color: white;
+        
+        legend {
+            padding-left: 55px;
+            font-size: rem(12);
+        }
+        
+        .o-cols {
+            &__item {
+                &:first-of-type {
+                    width: 60%;
+                }
+                
+                &:last-of-type {
+                    @extend %flex;
+                    flex: 1;
+                    justify-content: flex-end;
+                }
+                
+                .form-row {
+                    margin-bottom: 20px;
+                    
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    .o-wrap {
+        @extend %flex;
+        z-index: 20;
+
+        & > .o-cols {
+            & > .o-cols__item {
+                &:first-of-type {
+                    width: 680px;
+                    padding-top: 170px;
+                    color: white;
+                }
+                
+                &:last-of-type {
+                    @extend %flex;
+                    width: 344px;
+//                    flex: 1;
+                    
+                    img {
+                        max-width: none;
+                        filter: drop-shadow(-10px -10px 20px rgba(0, 0, 0, 0.15));
+                        margin: auto -478px 50px 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    .o-circle {
+        width: 1956px;
+        height: 1961px;
+        left: calc(50% - 1956px/2 - 232px);
+        top: 0;
+    }
+    
+    .o-header {
+        margin-bottom: 80px;
+
+        h2 {
+            @extend %lead--2;
+            font-weight: $extrabold;
+            margin-bottom: .5em;
+            
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.o-article {
+    
+    h3 {
+        @extend %lead--2;
+        font-weight: $extrabold;
+    }
+    
+    h4 {
+        @extend %lead--4;
+        margin-bottom: .2em;
+    }
+    
+    &--cols {
+        column-count: 2;
+    }
+    
+    ul {
+        li {
+            @extend %rel;
+            padding-left: 20px;
+            margin-bottom: 1em;
+            
+            &:before {
+                @extend %abs-pseudo;
+                left: 0;
+                top: 12px;
+                width: 4px;
+                height: 4px;
+                background: $c-green-01;
+            }
+        }
+    }
+}
