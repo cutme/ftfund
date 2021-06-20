@@ -7,6 +7,8 @@ require('./js/fonts.js');
 require('./js/helpers.js')
 require('./js/init.js');
 require('./js/inview.js');
+require('./js/nav.js');
+require('./js/smoothscroll.js');
 
 /*
 
@@ -18,7 +20,7 @@ require('./js/scrollpos.js');
 require('./js/scrollprogress.js');
 require('./js/carousels.js');
 require('./js/mobile-detach.js');
-require('./js/nav.js');
+
 
 */
 

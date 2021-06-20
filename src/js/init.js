@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded',function() {
         setTimeout(function() {
             
             window.animsInit();
-            document.getElementsByClassName('js-reviewsSlider')[0] ? window.reviews() : false;
+            document.getElementsByClassName('js-reviewsSlider')[0] ? window.reviews() : false;            
             
             cover.remove();
-        }, 250);  
+            
+            window.location.hash ? window.runScroll( '#'+document.getElementById(window.location.hash.substring(1)).id ) : false;
+        }, 250); 
     };
     
     window.addEventListener('load', init);
