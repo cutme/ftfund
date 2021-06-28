@@ -66,4 +66,14 @@
             font-weight: $extrabold;
         }
     }
+    
+    &.eat-it {
+        animation: pulse 1s ease-out;
+    }
+}
+
+@keyframes pulse{
+  50%{transform: scale(1.05)}
+  70%{transform: scale(0.95)
+  }
 }
