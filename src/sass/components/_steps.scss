@@ -17,11 +17,15 @@
     h2 {
         @extend %lead--1;
         white-space: nowrap;
-        color: white;
+        color: white;        
     }
     
     h3 {
         @extend %lead--3;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-font(base(36), rem(14));
+        }
     }
     
     ol {
@@ -56,8 +60,28 @@
                     font-family: $icomoon;
                     font-size: rem(26);
                     content: "\e906";
+                    
+                    @media ( max-width: $smartphone + px ) {
+                        top: auto;
+                        right: 50%;
+                        bottom: 0;
+                        transform: translate3d(50%, 80px, 0) rotate(90deg);
+                    }
+                }
+                
+                @media ( max-width: $smartphone + px ) {
+                    margin-bottom: 100px;
                 }
             }
+
+            @media ( max-width: $tablet + px ) {
+                width: 50%;
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	width: 100%;
+            }
+
             
             figure {
                 div {
@@ -69,15 +93,22 @@
                     
                     &:before {
                         @extend %abs-pseudo;
-                        @extend %lead--2;
+                        //@extend %lead--2;
                         left: 0; top: 100%;
                         width: 80px;
                         transform: translateY(-100%);
                         text-align: right;
-                        font-weight: $extrabold;
+                        font: {
+                            weight: $extrabold;
+                            size: rem(48);
+                        }
                         counter-increment: section;
                         content: counter(section, decimal) ". ";
                         color: white;
+                        
+                        @media ( max-width: $smartphone + px ) {
+                        	width: 30%;
+                        }
                     }
                 }
             }
@@ -103,9 +134,33 @@
     
     .o-cols {
         margin-bottom: 100px;
+        
+        &:first-of-type {
+            @media ( max-width: $tablet_portrait + px ) {
+            	flex-direction: column-reverse;
+            }
+            
+            @media ( max-width: $base + $padding + px ) {
+            	@include responsive-margin-bottom(base(100), rem(40));
+            }
+        }
 
         &__item {
             @extend %rel;
+            
+            &:first-of-type,
+            &:last-of-type {
+                @media ( max-width: $tablet_portrait + px ) {
+                	width: 100%;
+                	padding: 0;
+                }
+            }            
+        }
+        
+        h2 {
+            @media ( max-width: $tablet_portrait + px ) {
+            	margin-bottom: .5em;
+            }
         }
     }
 }

@@ -8,17 +8,43 @@
     h4 {
         @extend %lead--4;
         margin-bottom: .2em;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-font(base(24), rem(20));
+        }
     }
     
     &--cols {
-        column-count: 2;
+        @media ( min-width: $smartphone + 1px ) {
+	        column-count: 2;
+        }
+    }
+    
+    ol {
+        counter-reset: section;
+
+        li {
+            @extend %rel;
+            margin-bottom: 1em;
+            
+            &:before {
+                @extend %abs-pseudo;
+                left: -18px;
+                top: 0;
+                counter-increment: section;
+                content: counter(section, decimal) ". ";
+            }
+        }
     }
     
     ul {
         li {
             @extend %rel;
-            padding-left: 20px;
             margin-bottom: 1em;
+            
+            @media ( max-width: $smartphone_portrait + px ) {
+            	padding-left: 20px;
+            }
             
             &:before {
                 @extend %abs-pseudo;
@@ -27,6 +53,10 @@
                 width: 4px;
                 height: 4px;
                 background: $c-green-01;
+                
+                @media ( min-width: $smartphone_portrait + 1px ) {
+                    left: -20px;
+                }
             }
         }
     }

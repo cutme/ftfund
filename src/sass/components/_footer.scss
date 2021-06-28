@@ -6,6 +6,11 @@
     font-size: rem(12);
     overflow: hidden;
     color: black;
+    
+    @media ( max-width: $base + $padding + px ) {
+    	@include responsive-padding-top(base(75), rem(30));
+    	@include responsive-padding-bottom(base(75), rem(30));
+    }
 
     .o-assets {
         left: calc(50% - 751px/2 + 370.5px);
@@ -14,6 +19,10 @@
     
     &__nav {
         width: 50%;
+        
+        @media ( max-width: $tablet + px ) {
+        	display: none;
+        }
         
         ul {
             @extend %flex;
@@ -36,32 +45,54 @@
         &__item {
             &:first-of-type {
                 flex: 1;
+                
+                @media ( max-width: $smartphone + px ) {
+                	display: flex;
+                	align-items: center;
+                }
             }
             
             &:last-of-type {
                 @extend %flex;
                 margin: 0 0 0 auto;
                 width: 594px;
+                
+                @media ( max-width: $tablet + px ) {
+                	width: auto;
+                }
             }
         }
     }
     
     .o-logo {
-        margin-bottom: 50px;
+        @media ( min-width: $smartphone + 1px ) {
+            margin-bottom: 50px;
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+            margin-right: 15px;
+        }
+        
+        img {
+            &.desktop {
+                @media ( max-width: $smartphone + px ) {
+                	display: none;
+                }
+            }
+            
+            &.mobile {
+                @media ( min-width: $smartphone + 1px ) {
+                	display: none;
+                }
+            }
+        }
     }
     
     .o-social {
         margin: 0 0 0 auto;
 
         a {
-            font-size: rem(16);
             color: $c-navy-01;
-        }
-        
-         li {
-            &:not(:last-child) {
-                padding-right: 25px;
-            }
         }
     }
 }

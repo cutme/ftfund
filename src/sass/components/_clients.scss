@@ -5,17 +5,39 @@
         bottom: 40px;
     }
     
+    @media ( max-width: $base + $padding + px ) {
+    	@include responsive-padding-top(base(110), rem(60));
+    }
+    
+    @media ( max-width: $smartphone + px ) {
+        padding-bottom: 220px;
+    }
+    
     blockquote {
+        
+        @media ( max-width: $smartphone + px ) {
+        	text-align: center;
+        }
+        
         cite {
             @extend %lead--3;
             display: block;
             margin-bottom: 60px;
             font-style: italic;
+            
+            @media ( max-width: $base + $padding + px ) {
+                @include responsive-margin-bottom(base(60), rem(15));
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+                line-height: 1.6em;
+            }
         }
-        
+
         p {
             @extend %lead--5;
             white-space: nowrap;
+            font-weight: $regular;
             
             &:before {
                 content: '~ ';
@@ -49,10 +71,28 @@
     
     .o-cols {
         &__item {
+            
+            &:first-of-type {
+                width: grid(172);
+                
+                @media ( max-width: $smartphone + px ) {
+                    width: 0;
+                }
+            }
+            
             &:last-of-type {
                 @extend %rel;
-                width: 852px;
+                width: grid(852);
                 padding-top: 115px;
+                
+                @media ( max-width: $base + $padding + px ) {
+                	@include responsive-padding-top(base(115), rem(0));
+                }
+                
+                @media ( max-width: $smartphone + px ) {
+                    padding-top: 0;
+                    width: 100%;
+                }
                 
                 &:before {
                     @extend %abs-pseudo;
@@ -62,6 +102,10 @@
                     }
                     color: $c-navy-01;
                     content: "\e904";
+                    
+                    @media ( max-width: $smartphone + px ) {
+                    	display: none;
+                    }
                 }
             }            
         }
@@ -74,15 +118,45 @@
             left: -296px;
             top: -40px;
         }
+        
+        @media ( max-width: $smartphone + px ) {    
+            position: absolute;
+            width: 209.28px;
+            margin: 0;
+            left: 0; top: 0;
+            //left: -90.73px;
+            //top: 3055px;
+            
+            filter: drop-shadow(5.2537px 5.2537px 10.5074px rgba(0, 0, 0, 0.15));
+            transform: rotate(13.62deg) translate3d(-170px, 80px, 0);
+        }
 
         img {
             max-width: none;
+            
+            @media ( max-width: $smartphone + px ) {
+                max-width: 100%;
+                width: 209px;
+            }
+            
+            @media ( max-width: $base + $padding + px ) {
+            	//@include responsive-width(base(509), rem(209));
+                //margin-left: calc(-225px + (100vw - 1280px)/6);
+            }
+
         }
     }
 
     .o-header {
         margin-bottom: 140px;
-        text-align: right;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-margin-bottom(base(140), rem(50));
+        }
+        
+        @media ( min-width: $smartphone + px ) {
+        	text-align: right;
+        }
     }
     
     .swiper-button-next,
@@ -92,6 +166,13 @@
         background-color: $c-navy-01;
         border-radius: 50%;
         color: white;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-width(base(47), rem(27));
+        	@include responsive-height(base(47), rem(27));
+        	@include responsive-font(base(18), rem(10));
+        	
+        }
         
         &:hover {
             background-color: darken($c-navy-01, 5%)
@@ -105,6 +186,13 @@
     
     .swiper-container {
         padding: 0 115px 0 125px;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-padding-left(base(125), rem(60));
+        	@include responsive-padding-right(base(115), rem(60));
+        }
+        
+        
     }
     
     .swiper-slide {
@@ -118,6 +206,7 @@
     
     .swiper-button-prev {
         left: 0;
+        
         &:before {
             transform: scaleX(-1);
         }

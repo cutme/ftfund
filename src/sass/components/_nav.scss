@@ -1,5 +1,22 @@
 .c-nav {
+    @include z-index(nav);
     margin: 0 0 0 auto;
+
+    &__footer {
+        display: none;
+        padding: 40px 0 60px 0;
+        background-color: $c-navy-01;
+        margin: auto 0 0 0;
+        font: {
+            size: rem(12);
+            weight: $regular;
+        }
+        color: white;
+    
+        nav {
+            padding: 30px 0;
+        }
+    }
 
     &__menu {
         ul {
@@ -9,7 +26,9 @@
                 padding: 0 20px;
                 
                 &:last-child {
-                    padding-right: 0;
+                    @media ( min-width: $menu + 1px ) {
+                        padding-right: 0;	
+                    }
                 }
                 
                 a {
@@ -36,6 +55,10 @@
                     &:after, &:before {
                         background-color: $c-green-01;
                         
+                        @media ( max-width: $menu + px ) {
+                        	//display: none;
+                        }
+                        
                         .page-template-blue & {
                             background-color: $c-white-01;
                         }
@@ -53,5 +76,125 @@
                 }
             }
         }
+    }
+    
+    &:after {
+        @extend %abs-pseudo;        
+        left: calc(50% - 479px/2 - 59.5px);
+        top: -235px;
+        width: 100%;
+        height: 100%;
+        background: {
+            image: url(../img/nav/assets.png);
+            repeat: no-repeat;
+            size: 479px 562px;
+        }
+    }    
+    
+    @media ( max-width: $menu + px ) {
+    	display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $c-white-02;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: translate3d(100%, 0, 0);
+
+        flex-shrink: 0;
+        flex-direction: column;
+        
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+
+
+        &.is-animated {
+            transform: translate3d(-100%, 0, 0);
+            
+            .c-nav__menu {        
+                ul {            
+                    li {
+                        &.is-active {                            
+                            a {
+                                color: white;
+                                
+                                &:before {
+                                    opacity: 1;
+                                    transform: translate3d(0,0,0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .c-nav {
+            
+            &__footer {
+                display: block;
+            }
+
+            &__menu {
+                display: block;
+                margin-top: 40px;
+                //height: calc(100% - 100px);
+                padding-bottom: 40px;
+                	
+                ul {
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                    margin-bottom: 40px;
+                    
+                    li {
+                        margin-bottom: 20px;
+
+                        a {
+                            padding-bottom: 4px;
+                            line-height: 1em;
+                            
+                            font: {
+                                size: rem(24);
+                                weight: $bold;
+                            }
+                            color: $c-navy-01;
+                            
+                            &:hover {
+                                .desktop & {
+                                    color: $c-green-01;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.is-block {
+            display: flex;
+        }
+        
+        &.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }        
+    }
+    
+    .o-logo {
+        width: 100px;
+        margin: 0 auto 80px auto;
+
+        @media ( min-width: $menu + 1px ) {
+        	display: none;
+        }
+    }
+    
+    .o-social {
+        @extend %flex;
+        @extend %flex-x;
     }
 }

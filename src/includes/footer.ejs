@@ -1,33 +1,34 @@
 
-        <footer class="c-footer">
+        <footer class="c-footer js-footer">
             <div class="o-wrap">
                 
                 <div class="o-cols">
                     <div class="o-cols__item">
                         <a href="index.html" class="o-logo">
-                            <img src=<%= require("./img/assets/logo-itfund--mono.svg") %> alt="it fund">
+                            <img src=<%= require("./img/assets/logo-itfund--mono.svg") %> alt="it fund" class="desktop">
+                            <img src=<%= require("./img/assets/logo-itfund--simple.svg") %> alt="it fund" class="mobile">
                         </a>
                         
                         <p class="c-footer__copyrights">&copy; 2021 FT FUND</p>
                     </div>
                     
                     <div class="o-cols__item">
-                        <nav class="c-footer__nav">
+                        <nav class="c-footer__nav js-menu">
                             <ul>
                                 <li>
-                                    <a href="#">O nas</a>
+                                    <a href="#onas">O nas</a>
+                                </li>
+                                
+                                <li class="js-openLightbox">
+                                    <a href="#polityka-cookies">Polityka cookies</a>
                                 </li>
                                 
                                 <li>
-                                    <a href="#">Polityka cookies </a>
+                                    <a href="#oferta">Oferta</a>
                                 </li>
                                 
-                                <li>
-                                    <a href="#">Oferta</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">Polityka prywatności</a>
+                                <li class="js-openLightbox">
+                                    <a href="#polityka-prywatnosci">Polityka prywatności</a>
                                 </li>
                                 
                                 <li>
@@ -35,30 +36,13 @@
                                 </li>
                                 
                                 <li>
-                                    <a href="#">Kontakt</a>
+                                    <a href="#kontakt">Kontakt</a>
                                 </li>
                             </ul>
                         </nav>
                         
-                        <div class="o-social">
-                            <ul>
-                                <li>
-                                    <a href="#" class="icon-facebook"></a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#" class="icon-instagram"></a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#" class="icon-linkedin"></a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#" class="icon-youtube"></a>
-                                </li>
-                            </ul>
-                        </div>
+                        <% include social %>
+
                     </div>
                 </div>
                 

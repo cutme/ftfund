@@ -11,13 +11,36 @@ document.addEventListener('DOMContentLoaded',function() {
         
         let offsetTop = document.querySelector(el).offsetTop;
         let topbar_height = 0;
-        //let topbar_height = topbar.clientHeight;
+
+        if (window.innerHeight <= 640) {
+            topbar_height = document.getElementsByClassName('js-topbar')[0].clientHeight;
+        }
         
         scroll({
             top: offsetTop-topbar_height,
             behavior: "smooth"
         })
     };
+    
+    
+    const btnGoTo = document.getElementsByClassName('js-goto');
+    
+    const clickAction = function(e) {
+        
+        const target = e.currentTarget.getAttribute('href');
+            
+        window.runScroll(target);   
+        
+        e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
+    };
+    
+    if (btnGoTo.length > 0) {
+        for (let i = 0; i < btnGoTo.length; i++) {
+            btnGoTo[i].addEventListener('click', clickAction);
+        }
+    }
+
+    
 
 /*
     const gtt = document.querySelectorAll("[data-target]");

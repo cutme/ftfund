@@ -3,7 +3,7 @@
 }
 
 @function base($target) {
-	$vw-context: (($base + 256) * 0.01);
+	$vw-context: (($base + $padding) * 0.01);
 	@return ($target / $vw-context) * 1vw;
 }
 

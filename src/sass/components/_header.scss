@@ -1,9 +1,14 @@
 .c-header {
+
     h1 {
         @extend %lead--4;
         margin-bottom: 2.8em;
         text-transform: uppercase;
         font-weight: $bold;
+        
+        @media ( max-width: $smartphone + px ) {
+        	order: 2;
+        }
     }
     
     h2 {
@@ -18,6 +23,10 @@
         @media ( max-width: $base + $padding + px ) {
         	@include responsive-font(base(64), rem(36));
         }
+        
+        @media ( max-width: $smartphone + px ) {
+            order: 1;
+        }
     }
     
     h3 {
@@ -31,16 +40,32 @@
         .page-template-green & {
             color: $c-green-01;
         }
+        
+        @media ( max-width: $smartphone + px ) {
+            order: 3;
+        }
     }
     
     &__image {
         @extend %abs;
+        @extend %flex;
 
         .page-template-green & {
             left: -100px;
             bottom: 20px;
             width: 900px;
-            height: 469px;
+            //height: 469px;
+            
+            @media ( max-width: $base + $padding + px ) {
+            	@include responsive-width(base(900), rem(400));
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	position: relative;
+            	left: auto;
+            	bottom: auto;
+                margin: -140px -180px 0 auto;
+            }
         }
         
         .page-template-blue & {
@@ -48,6 +73,19 @@
             width: 687px;
             height: 406px;
             left: 0;
+            
+            
+            @media ( max-width: $base + $padding + px ) {
+            	@include responsive-width(base(687), rem(400));
+            	@include responsive-height(base(406), rem(250));
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	position: relative;
+            	left: auto;
+            	bottom: auto;
+                margin: -140px -180px 0 auto;
+            }
             
             &:before {
                 @extend %abs-pseudo;
@@ -64,19 +102,49 @@
         }
         
         img {
-            max-width: none;
+//            max-width: none;
+            width: 100%;
             filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+            margin: auto 0 0 0;
+            
+            @media ( max-width: $smartphone + px ) {
+                margin: auto 0 0 0;
+            }
+        }
+    }
+
+    &__lead {
+        @extend %flex;
+        @extend %flex-column;
+        padding-right: 20px;
+        
+        .page-template-blue & {
+            @media ( max-width: $tablet + px ) {
+            	width: 50%;
+            }
         }
     }
     
     .o-circle {
-        @extend %abs;
-        left: 492px;
+        @extend %abs; z-index: 0;
+        left: grid(492, $base + $padding);
         top: -708px;
         height: 905px;
         width: 902px;
         border-radius: 50%;
         box-shadow: 12.8px 12.8px 10px rgba(0, 0, 0, 0.2);
+        
+        @media ( max-width: $tablet + px ) {
+        	left: 20%;
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+        	width: 397px;
+            height: 398px;
+            left: calc(50% - 397px/2 + 173.5px);
+            top: -31px;
+            box-shadow: 14.4408px 14.4408px 11.2819px rgba(0, 0, 0, 0.2);
+        }
         
         .page-template-blue & {
             background-color: $c-blue-03;
@@ -87,20 +155,26 @@
         }
     }
     
-    .o-circle {
-        z-index: 0;
-    }
-    
     .o-cols {
         @extend %rel;
+        
+        @media ( max-width: $smartphone + px ) {
+            display: block;
+        }
 
         &__item {
             &:first-of-type {
-                width: grid(768);
+                z-index: 10;
+                
+                @media ( min-width: $smartphone + 1px ) {
+                    width: grid(768);
+                }
             }
             
             &:last-of-type {
-                width: grid(256);
+                @media ( min-width: $smartphone + 1px ) {
+                    width: grid(256);
+                }
             }
         }
     }
@@ -108,5 +182,9 @@
     .o-wrap {
         height: 100%;
         padding-top: 250px;
+        
+        @media ( max-width: $smartphone + px ) {
+        	padding-top: 120px;
+        }
     }
 }

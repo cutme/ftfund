@@ -1,30 +1,48 @@
 .c-info {
     overflow: hidden;
     padding: 70px 0;
+    
+    @media ( max-width: $base + $padding + px ) {
+    	@include responsive-padding-top(base(70), rem(20));
+    	@include responsive-padding-bottom(base(70), rem(20));
+    } 
 
     &__image {
         @extend %abs; z-index: -1;
+        
+        img {
+            width: 100%;
+        }
 
         .page-template-blue & {
             width: 1014px;
-            height: 674px;
+            //height: 674px;
             background-color: $c-white-01;
             left: -220px;
             top: -240px;
-
+            
             img {
-                 mix-blend-mode: luminosity;
+                mix-blend-mode: luminosity;
             }
         }
         
         .page-template-green & {
             left: 280px;
             top: 40px;
-            width: 649.27px;
-            height: 367.87px;
+            width: 649px;
+            //height: 367.87px;
+
+            @media ( max-width: $smartphone + px ) {
+            	top: auto;
+            	bottom: -100px;
+            }
 
             img {
                 filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+                
+                @media ( max-width: $base + $padding + px ) {
+                	@include responsive-width(base(649), rem(200));
+                }                
             }
         }        
     }
@@ -47,12 +65,16 @@
     }
     
     &__problems {
-        padding-top: 70px;
+        padding-top: 70px;        
 
         .o-cols {
             padding: {
                 bottom: 100px;
                 top: 70px;
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	padding-top: 0;
             }
 
             h4 {
@@ -70,14 +92,46 @@
         padding-bottom: 20px;
     }
     
+    .o-article {
+        
+        h3 {
+            @media ( max-width: $smartphone + px ) {
+            	margin-bottom: 1em;
+            }
+        }
+        
+/*
+        p {
+            & + p {
+                @media ( max-width: $smartphone + px ) {
+                    height: 1em;
+                }
+            }
+        }
+*/
+    }
+    
     .o-assets {
         left: calc(50% - 750.85px/2 - 431.58px);
         top: -300px;
     }
     
     .o-cols {
+        
+        @media ( max-width: $smartphone + px ) {
+        	display: block;
+        }
+        
         &__item {
             @extend %rel;
+            
+            &:first-of-type,
+            &:last-of-type {
+                @media ( max-width: $smartphone + px ) {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
         }
     }
     

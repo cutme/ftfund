@@ -23,7 +23,8 @@ $z-index: (
     header:         30,
 	topbar        : 40,
 	nav           : 50,
-	logo          : 60
+	logo          : 10,
+	lightbox      : 110
 );
 
 // Paths
@@ -42,6 +43,7 @@ $base:				1024;
 
 // RWD
 
+$menu:                  640;
 $desktop:              1920;
 $tablet:               1023;
 $tablet_portrait:       768;

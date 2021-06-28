@@ -1,0 +1,149 @@
+.c-lightbox {
+    @include z-index(lightbox);
+    @extend %flex;
+    @extend %flex-xy;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(black, .7);
+    
+    display: none;
+    opacity: 0;
+    
+
+    &.is-visible {
+        display: block;
+        
+        @media ( min-width: 578px ) {
+            display: flex;
+        }
+    }
+    
+    &.fade-in {
+        opacity: 1;
+    }
+    
+    @media ( max-width: $smartphone_portrait + px ) {
+        padding: {
+            left: 30px;
+            right: 30px;
+        }
+	}
+	
+	&.is-block {
+    	display: block;
+    	margin: 0 auto;
+	}
+    
+    &__content {
+        flex: 1;
+        padding: 0 grid(40, 870);
+        overflow: auto;
+    	-webkit-overflow-scrolling: touch;
+    	
+    	@media ( max-width: $smartphone_portrait + px ) {
+        	padding: 0 20px 0 0;
+        }
+    	
+    	@media ( max-width: $base + $padding + px ) {
+//        	@include responsive-padding-left(base(60), rem(28));
+        }
+    	
+    	h2, h3 {
+        	line-height: 58px;
+        	line-height: 1.8em;
+        	line-height: 1.4em;
+        	color: $c-navy-01;
+    	}
+    	
+    	h2 {
+        	@extend %lead--2;
+        	font-weight: $bold;
+    	}
+    	
+    	h3 {
+        	@extend %lead--4;
+        	font-weight: $light;
+    	}
+    }
+    
+    &__cta {
+        @extend %flex;
+        padding: 27px 80px 27px 0;
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            padding: 23px 0;
+        }
+        
+        .o-btn {
+            margin: 0 auto;
+
+            @media ( min-width: $smartphone_portrait + 1px ) {
+                margin: 0 0 0 auto;
+            }
+        }
+    }
+    
+    &__images {
+        @extend %abs;
+        @extend %flex;
+        align-items: flex-end;
+        bottom: 0;
+        
+        &--boy {
+            z-index: -1;
+            right: -121px;
+            right: -14.1%;
+            width: 163px;
+            
+            @media ( max-width: 1080px ) {
+                width: grid(163, 869);
+            }
+        }
+        
+        &--leafs {
+            z-index: -1;
+            width: 90px;
+            height: 306.42px;
+            left: -90px;
+            left: -10.2%;
+            
+            @media ( max-width: 1080px ) {
+                width: grid(90, 869);
+            }
+        }
+    }
+    
+    &__wrapper {
+        @extend %flex;
+        @extend %flex-column;
+        @extend %rel;
+        width: 870px; height: 576px;
+        background-color: $c-white-01;
+        box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
+        padding: 50px 20px 0 20px; 
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        
+        .fade-in & {
+            transform: translate3d(0, 10px, 0);
+        }
+
+        @media ( max-width: 1120px ) {
+        	width: grid(870, 1120);
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            width: 100%;
+            padding: 30px 20px 0 20px; 
+    	}
+    }
+    
+    .icon-close {
+        @extend %abs;
+        right: 17px; top: 18px;
+        font-size: rem(18);
+        cursor: pointer;
+        color: $c-navy-01;
+    }
+}

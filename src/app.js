@@ -4,16 +4,19 @@ import css from './sass/style.scss';
 require('./js/polyfills.js');
 require('./js/carousels.js');
 require('./js/fonts.js');
+require('./js/footer.js');
 require('./js/helpers.js')
 require('./js/init.js');
 require('./js/inview.js');
+require('./js/ismobile.js');
+require('./js/lightbox.js');
 require('./js/nav.js');
 require('./js/smoothscroll.js');
 
 /*
 
 require('./js/helpers.js');
-require('./js/ismobile.js');
+
 require('./js/inview.js');
 require('./js/fixel.js');
 require('./js/scrollpos.js');

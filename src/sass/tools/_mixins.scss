@@ -337,3 +337,27 @@ $prefixes: ("-webkit-","-moz-", "-o-", "");
 
     width: calc(#{$responsive} + 0.1rem);
 }
+
+@mixin responsive-height($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        height: calc(#{$min} + 0.01rem);
+    }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            height: $max;
+        }
+    }
+    
+    @if $fallback {
+        height: $fallback;
+    }
+
+    height: calc(#{$responsive} + 0.1rem);
+}

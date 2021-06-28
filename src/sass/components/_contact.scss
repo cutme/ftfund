@@ -3,6 +3,10 @@
     margin-top: -210px;
     overflow: hidden;
     
+    @media ( max-width: $smartphone + px ) {
+    	padding-top: 30px;
+    }
+    
     &__form {
         font-weight: $regular;
         color: white;
@@ -13,15 +17,23 @@
         }
         
         .o-cols {
+            
+            @media ( max-width: $tablet + px ) {
+            	display: block;
+            }
+            
             &__item {
                 &:first-of-type {
-                    width: 60%;
+                    @media ( min-width: $tablet + 1px ) {
+                        width: 60%;
+                    }
                 }
                 
                 &:last-of-type {
                     @extend %flex;
                     flex: 1;
                     justify-content: flex-end;
+
                 }
                 
                 .form-row {
@@ -35,27 +47,71 @@
         }
     }
     
+    .o-btn {
+        @media ( max-width: $tablet + px ) {
+            margin: 40px auto 0 0;
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+        	margin: 40px auto 0 auto;
+        }
+    }
+    
     .o-wrap {
         @extend %flex;
         z-index: 20;
 
         & > .o-cols {
+            
+            @media ( max-width: $smartphone + px ) {
+                display: block;
+            }
+
             & > .o-cols__item {
                 &:first-of-type {
-                    width: 680px;
                     padding-top: 170px;
                     color: white;
+                    
+                    @media ( min-width: $smartphone + 1px ) {
+                    	width: 680px;
+                    }
                 }
                 
                 &:last-of-type {
                     @extend %flex;
-                    width: 344px;
-//                    flex: 1;
+                    
+                    @media ( min-width: $smartphone + 1px ) {
+                        width: 344px;
+                    }
+                    
+                    @media ( max-width: $smartphone + px ) {
+                    	background-color: $c-navy-01;
+                    }
+                    
+                    &:before {
+                        @extend %abs-pseudo;
+                        left: -50%; top: 0;
+                        width: 200%; height: 100%;
+                        background-color: $c-navy-01;
+                        
+                        @media ( min-width: $smartphone + 1px ) {
+                        	display: none;
+                        }
+                    }
                     
                     img {
                         max-width: none;
                         filter: drop-shadow(-10px -10px 20px rgba(0, 0, 0, 0.15));
                         margin: auto -478px 50px 0;
+                        
+                        @media ( max-width: $tablet + px ) {
+                        	@include responsive-width(tablet(824), rem(800));
+                        }
+                        
+                        @media ( max-width: $smartphone + px ) {
+                            width: 100%;
+                            margin: 0 auto;
+                        }
                     }
                 }
             }
@@ -64,9 +120,28 @@
     
     .o-circle {
         width: 1956px;
-        height: 1961px;
+        height: 1956px;
         left: calc(50% - 1956px/2 - 232px);
         top: 0;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-width(base(1956), rem(1180));
+        	@include responsive-height(base(1956), rem(1180));
+        }
+
+        @media ( max-width: $tablet + px ) {
+        	left: 0;
+        	transform: translateX(-50%);
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+        	left: 50%; top: 50px;
+        	transform: translateX(-50%);
+        	
+        	
+        	width: 1181.21px;
+            height: 1185.73px;
+        }
     }
     
     .o-header {

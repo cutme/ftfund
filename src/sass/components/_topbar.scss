@@ -4,9 +4,30 @@
     width: 100%;
     height: 170px;
     
+    @media ( max-width: $base + $padding + px ) {
+    	@include responsive-height(base(170), rem(68));
+    }
+    
+    @media ( max-width: $smartphone + px ) {
+        position: fixed;
+    	height: 64px;
+    	background: $c-white-01;
+        box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    
+    
     .o-wrap {
         @extend %flex;
         @extend %flex-y;
         height: 100%;
+        
+        & > .o-logo {
+            @include z-index(logo);
+    
+            @media ( max-width: $base + $padding + px ) {
+            	@include responsive-width(base(162), rem(80));
+            }
+        }
     }
 }

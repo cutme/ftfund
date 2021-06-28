@@ -120,20 +120,36 @@
     &--2 {
         font-size: rem(48);
         line-height: 1.15em;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-font(base(48), rem(28));
+        }
     }
     
     &--3 {
         font-size: rem(36);
         line-height: 1.4em;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-font(base(36), rem(16));
+        }
     }
     
     &--4 {
         font-size: rem(24);
         line-height: 1.4em;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-font(base(24), rem(14));
+        }
     }
     
     &--5 {
         font-size: rem(18);
+        
+        @media ( max-width: $base + $padding + px ) {
+            @include responsive-font(base(18), rem(10));
+        }
     }
 }
 
@@ -180,7 +196,7 @@
 
 %wrap {
     @extend %rel;
-    max-width: $base + 256px;
+    max-width: $base + $padding + px;
 	margin: 0 auto;	
 	padding: {
     	left: 128px;
@@ -188,12 +204,25 @@
 	}
 	
 	@media ( max-width: $base + $padding + px ) {
-    	@include responsive-padding-left(base(128), rem(20));
-    	@include responsive-padding-right(base(128), rem(20));
+    	padding: {
+        	left: base(128);
+        	right: base(128);
+    	}
+    	//@include responsive-padding-left(base(128), rem(16));
+    	//@include responsive-padding-right(base(128), rem(16));
     }
 	
+	@media ( max-width: $tablet_portrait + px ) {
+		padding: {
+    		left: 40px;
+    		right: 40px;
+		}
+	}
 
-	@media ( max-width: $base + 256px ) {
-	   // width: 100%;
+	@media ( max-width: $smartphone_portrait + px) {
+        padding: {
+            left: 16px;
+            right: 16px;
+        }
 	}
 }

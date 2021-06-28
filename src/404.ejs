@@ -1,0 +1,35 @@
+<% include ./src/includes/head %>
+<body class="page-template-green">
+
+    <% include ./src/includes/cover %>
+    
+    <div class="o-container">
+        
+        <% include ./src/includes/topbar--404 %>
+        
+        <div class="c-404">
+            <div class="o-wrap">
+                <div class="o-cols">
+                    <div class="o-cols__item">
+                        <h1>Ups!<br>
+                            Chyba się zgubiłeś...</h1>
+    
+                        <h2>(Błąd 404)</h2>
+                        
+                        <div class="o-more">
+                            <a href="#" class="o-btn o-btn--green">Wróć do strony głównej</a>
+                        </div>
+                    </div>
+                    
+                    <div class="o-cols__item">
+                        <img src=<%= require("./img/404/lighthouse.svg") %> alt="lighthouse">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include ./src/includes/container-assets %>
+    </div>
+
+</body>
+</html>

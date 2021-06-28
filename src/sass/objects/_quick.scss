@@ -3,16 +3,43 @@
     @extend %flex;
     @extend %flex-column;
     @extend %flex-xy;
-    top: 80px; left: 0;
-    left: calc(50% - 453px/2 + 454.5px);
-    width: 453px;
-    height: 459px;
+    top: 80px; 
+    //left: 0
+    left: calc(50% - 460px/2 + 460px);
+    
+    //right: 8%;
+    
+    width: 460px;
+    height: 460px;
     background-color: $c-blue-03;
     padding: 0 100px;
     border-radius: 50%;
-    box-shadow: 12.8px 12.8px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 12.8px 12.8px 10px rgba(0, 0, 0, 0.2);    
     text-align: center;
     
+    @media ( max-width: $base + $padding + px ) {
+    	@include responsive-width(base(460), rem(160));
+    	@include responsive-height(base(460), rem(160));
+    	@include responsive-padding-left(base(100), rem(20));
+    	@include responsive-padding-right(base(100), rem(20));
+    	
+    	
+    	left: auto;
+    	right: calc(0 - 5%);
+//    	right: calc(0 - base(460)/2 + base(460));
+//    	left: calc(50% - base((460)*1px)/2 + 460px);
+    	//right: calc(  );
+    }
+    
+    @media ( max-width: $smartphone + px ) {
+    	box-shadow: 4.51765px 4.51765px 3.52941px rgba(0, 0, 0, 0.2);
+    }
+    
+    @media ( max-width: $smartphone + px ) {
+        top: 0;
+        
+    }
+
     p {
         color: white;
 
@@ -20,11 +47,19 @@
             @extend %lead--2;
             margin-bottom: .5em;
             font-weight: $extrabold;
+            
+            @media ( max-width: $base + $padding + px ) {
+            	@include responsive-font(base(48), rem(18));
+            }
         }
         
         &:nth-of-type(2),
         &:nth-of-type(3) {
             @extend %lead--3;
+            
+            @media ( max-width: $base + $padding + px ) {
+            	@include responsive-font(base(36), rem(14));
+            }
         }
         
         &:nth-of-type(2) {

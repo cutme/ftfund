@@ -19,6 +19,7 @@ const minify = {
 
 const templateFileMapper = [
 
+    { template: "./src/404.ejs", file: "404.html" },
     { template: "./src/index.ejs", file: "index.html" },
     { template: "./src/loans-1.ejs", file: "loans-1.html" },
     { template: "./src/loans-2.ejs", file: "loans-2.html" },

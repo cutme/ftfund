@@ -1,6 +1,11 @@
 
                 <nav class="c-nav js-nav">                    
                     <div class="c-nav__menu js-menu">
+                        
+                        <a href="index.html" class="o-logo">
+                            <img src=<%= require("./img/assets/logo-itfund.svg") %> alt="it fund" width="162" height="67">
+                        </a>
+                        
                         <ul>
                             <li>
                                 <a href="#onas">o nas</a>
@@ -18,5 +23,24 @@
                                 <a href="#kontakt">kontakt</a>
                             </li>
                         </ul>
+                    </div>
+                    
+                    <div class="c-nav__footer">
+                        <p>&copy; 2021 FT FUND</p>
+                        
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Polityka cookies</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="#">Polityka prywatności</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        
+                        <% include social %>
+
                     </div>
                 </nav>

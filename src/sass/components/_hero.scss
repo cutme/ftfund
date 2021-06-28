@@ -1,33 +1,68 @@
 .c-hero {
     height: 743px;
-
-    .o-circle {
-        width: 1050px;
-        height: 1050px;
-        left: calc(50% - 1050px/2 + 222px);
-        top: -331px;
-        box-shadow: 12.8px 12.8px 10px rgba(0, 0, 0, 0.2);
+    
+    @media ( max-width: $smartphone + px ) {
+    	height: 560px;
     }
-    
-    
     
     &__zenboy {
         position: absolute;
-        width: 633px;
-        height: 501.54px;
-        left: -220px;
-        top: 207.12px;
+        width: grid(633, 1244);
+        left: grid(-220, $base + $padding );
+        bottom: 34px;
+        
+        @media ( max-width: $base + $padding + px ) {
+            @include responsive-width(grid(633, 1244), rem(300));
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+        	left: auto;
+        	right: -100px;
+        	bottom: auto;
+        	top: 160px;
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+        	right: 0;
+        	top: 240px;
+        	transform: translateX(46%);
+        }
 
         img {
             filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
         }
     }
-    
+
+    .o-circle {
+        top: -331px;
+        left: calc(50% - 1050px/2 + 222px);        
+        width: 1050px;
+        height: 1050px;
+        box-shadow: 12.8px 12.8px 10px rgba(0, 0, 0, 0.2);     
+        
+        @media ( max-width: $base + $padding + px ) {
+            left: calc(50% - 1050px/2 + 222px - ( (100% - 1280px)/4 ));
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+            width: 1181.21px;
+            height: 1185.73px;
+            left: calc(50% - 1181.21px/2 - 0.39px);
+            top: -657px;
+            
+            box-shadow: 14.4408px 14.4408px 11.2819px rgba(0, 0, 0, 0.2);
+        }
+    }
+        
     .o-social {
         @extend %rel; z-index: 10;
         width: 100%;
         margin: auto 0 0 0;
         padding-left: 130px;
+        
+        @media ( max-width: $smartphone + px ) {
+        	display: none;
+        }
         
         ul {
             @extend %flex;
@@ -45,10 +80,16 @@
         @extend %flex;
         @extend %flex-x;
         @extend %flex-column;
-        width: $base + px;
         height: 100%;
-        padding-left: 360px;
         color: $c-white-01;
+
+        @media ( min-width: $smartphone + 1px ) {
+            width: grid(684, $base + $padding);            
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+        	width: 50%;
+        }
         
         h1 {
             @extend %lead--1;
@@ -56,11 +97,21 @@
         }
         
         p {
-            margin-bottom: 3.5em;
+            @media ( min-width: $smartphone + 1px ) {
+            	margin-bottom: 3.5em;
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	display: none;
+            }
         }
         
         .o-more {
             text-align: right;
+            
+            @media ( max-width: $smartphone + px ) {
+            	margin-top: 40px;
+            }
         }
     }
 
@@ -69,7 +120,10 @@
         @extend %flex;
         @extend %flex-y;
         height: 100%;
-        justify-content: flex-end;
+        //background-color: gray;
+        
+        @media ( min-width: $smartphone + 1px ) {
+            justify-content: flex-end;	
+        }
     }
-
 }

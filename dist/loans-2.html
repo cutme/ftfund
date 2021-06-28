@@ -25,7 +25,7 @@
     <div class="o-container">
         
         
-         <div class="c-topbar">
+         <div class="c-topbar js-topbar">
             <div class="o-wrap">
                 <a href="index.html" class="o-logo">
                     <img src="img/assets/logo-itfund.svg" alt="it fund" width="162" height="67">
@@ -34,6 +34,11 @@
                 
                 <nav class="c-nav js-nav">                    
                     <div class="c-nav__menu js-menu">
+                        
+                        <a href="index.html" class="o-logo">
+                            <img src="img/assets/logo-itfund.svg" alt="it fund" width="162" height="67">
+                        </a>
+                        
                         <ul>
                             <li>
                                 <a href="index.html#onas">o nas</a>
@@ -52,8 +57,48 @@
                             </li>
                         </ul>
                     </div>
+                    
+                    <div class="c-nav__footer">
+                        <p>&copy; 2021 FT FUND</p>
+                        
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Polityka cookies</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="#">Polityka prywatności</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        
+                        
+                        <div class="o-social">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon-facebook"></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" class="icon-instagram"></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" class="icon-linkedin"></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" class="icon-youtube"></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </nav>
 
+                
+                <i class="o-hamburger js-hamburger"></i>
             </div>
         </div>
 
@@ -140,7 +185,6 @@
                             
                             <h4>Bezproblemowo</h4>
                             <p>Nie sprawdzamy Cię w BIK, KRD, ani nie potrzebujemy zaświadczenia o Twoich zarobkach.</p>
-                          
                         </article>
                     </div>
                     
@@ -165,6 +209,9 @@
                             <h4>pewnie</h4>
                             <p>Na wstępie informujemy Cię o wszystkich kosztach. Dostajesz od nas umowę do przejrzenia, a jeśli nie masz uwag, umawiamy się na podpisanie aktu u wybranego
                             przez Ciebie notariusza.</p>
+                                         
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
                             
                         </article>
                     </div>                    
@@ -377,35 +424,36 @@
         </div>
 
         
-        <footer class="c-footer">
+        <footer class="c-footer js-footer">
             <div class="o-wrap">
                 
                 <div class="o-cols">
                     <div class="o-cols__item">
                         <a href="index.html" class="o-logo">
-                            <img src="img/assets/logo-itfund--mono.svg" alt="it fund">
+                            <img src="img/assets/logo-itfund--mono.svg" alt="it fund" class="desktop">
+                            <img src="img/assets/logo-itfund--simple.svg" alt="it fund" class="mobile">
                         </a>
                         
                         <p class="c-footer__copyrights">&copy; 2021 FT FUND</p>
                     </div>
                     
                     <div class="o-cols__item">
-                        <nav class="c-footer__nav">
+                        <nav class="c-footer__nav js-menu">
                             <ul>
                                 <li>
-                                    <a href="#">O nas</a>
+                                    <a href="#onas">O nas</a>
+                                </li>
+                                
+                                <li class="js-openLightbox">
+                                    <a href="#polityka-cookies">Polityka cookies</a>
                                 </li>
                                 
                                 <li>
-                                    <a href="#">Polityka cookies </a>
+                                    <a href="#oferta">Oferta</a>
                                 </li>
                                 
-                                <li>
-                                    <a href="#">Oferta</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">Polityka prywatności</a>
+                                <li class="js-openLightbox">
+                                    <a href="#polityka-prywatnosci">Polityka prywatności</a>
                                 </li>
                                 
                                 <li>
@@ -413,10 +461,11 @@
                                 </li>
                                 
                                 <li>
-                                    <a href="#">Kontakt</a>
+                                    <a href="#kontakt">Kontakt</a>
                                 </li>
                             </ul>
                         </nav>
+                        
                         
                         <div class="o-social">
                             <ul>
@@ -437,6 +486,7 @@
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
                 
@@ -452,6 +502,163 @@
         </div>
 
     </div>
+
+    
+    <div class="c-lightbox js-lightbox" id="polityka-cookies">
+        <div class="c-lightbox__wrapper">
+            
+            <i class="icon-close js-close"></i>
+            
+            <div class="c-lightbox__content">
+                <div class="o-article">
+                    <h2>Pliki cookie</h2>
+                    
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    
+                    
+<p>Są to małe pliki tekstowe rejestrujące aktywność użytkownika online, które ułatwiają poruszanie się po witrynie oraz podejmowanie rozmaitych działań. Rozpoznają urządzenie użytkownika i wyświetlają stronę dopasowaną do jego indywidualnych preferencji. Ich wyłączenie może spowodować błędne działanie strony oraz brak dostępu do niektórych jej
+funkcji.</p>
+
+<p><strong>Do czego służą pliki cookie?</strong></p>
+<p>Do identyfikacji Twojej przeglądarki podczas korzystania z naszej strony. Pliki cookie zawierają niewielkie ilości tekstu możliwe do odczytania tylko przez stronę, która je wysyła. Dzięki zebranym informacjom możemy dowiedzieć się, jak często odwiedzasz nasz serwis i które jego elementy najbardziej Cię interesują. Pliki cookie pozwalają zapamiętać wybory dokonane przez użytkownika i używane m.in. przy logowaniu. Pozostają na urządzeniu użytkownika do czasu wylogowania z serwisu lub zamknięcia przeglądarki. Uzyskane dane wykorzystujemy do ułatwienia funkcjonowania naszej strony internetowej ADRES STRONY oraz w celach statystycznych i reklamowych.</p>
+
+<p><strong>Usuwanie plików cookie</strong></p>
+<p>Masz prawo do odmowy zapisywania i odczytywania plików cookie na Twoim urządzeniu,
+takim jak komputer, telefon, tablet. Musisz jednak zaznaczyć odpowiednie ustawienia w
+opcjach przeglądarki internetowej lub nie wyrazić zgody w przypadku, gdy aplikacja w
+serwisie internetowym będzie się Ciebie o to pytać. Skonfigurowanie przeglądarki w sposób,
+który zablokuje instalację plików cookie dla określonych, wybranych przez użytkownika stron
+internetowych lub dla wszystkich stron może spowodować utratę pewnych funkcjonalności,
+które wymagają instalacji plików cookie. Zgodnie z wymogami ustawy z dnia 16 lipca 2004 r.
+Prawa telekomunikacyjnego i Rozporządzenia Parlamentu Europejskiego i Rady (UE)
+2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z
+przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz
+uchylenia dyrektywy 95/46/WE za potwierdzenie zgody na wykorzystanie plików cookie
+uznaje się skonfigurowanie przeglądarki, pozwalającej na instalację plików cookie na
+komputerze.</p>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="c-lightbox__cta">
+                <a href="#" class="o-btn o-btn--navy js-close">Zrozumiałem</a>
+            </div>
+            
+            <div class="c-lightbox__images c-lightbox__images--boy">
+                <img src="img/lightbox/boy-clipped.svg" alt="">
+            </div>
+            
+            <div class="c-lightbox__images c-lightbox__images--leafs">
+                <img src="img/lightbox/leafs-clipped.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="c-lightbox js-lightbox" id="polityka-prywatnosci">
+        <div class="c-lightbox__wrapper">
+            
+            <i class="icon-close js-close"></i>
+            
+            <div class="c-lightbox__content">
+                <div class="o-article">
+                    <h2>Polityka prywatności</h2>
+                    <h3>– co to takiego?</h3>
+                    
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    
+                    
+<p>Niniejsza polityka prywatności służy jedynie jako pomoc w zrozumieniu, jakie informacje i dane są zbierane i w jakim celu oraz do czego je wykorzystujemy. Te dane są bardzo dla nas ważne, dlatego prosimy o dokładne zapoznanie się z tym dokumentem, gdyż określa on zasady oraz sposoby przetwarzania i ochrony danych osobowych Klientów.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>W polityce prywatności zawarte są także informacje o stosowaniu plików cookie.</strong></p>
+
+<p>&nbsp;</p>
+
+<p>Administratorem danych osobowych Klientów w rozumieniu Ustawy z dnia 29 sierpnia 1997 r. o ochronie danych osobowych jest NAZWA FIRMY. Ww. podmiot niniejszym oświadcza, że przestrzega zasad ochrony danych osobowych Klientów oraz wszelkich uregulowań prawnych, które są przewidziane w Ustawie z dnia 29 sierpnia 1997 r. o ochronie danych osobowych (tj. Dz. U. z 2015 r. poz. 2135).</p>
+
+<p>&nbsp;</p>
+
+<p>Klient ma prawo zwrócić się do nas, aby uzyskać wyczerpujące informacje o tym, w jaki sposób wykorzystujemy jego dane osobowe. Dokonujemy wszelkich starań, aby rzetelnie informować o danych, jakie gromadzimy, w jaki sposób je wykorzystujemy, jakim celom mają
+służyć i komu je przekazujemy, jaką zapewniamy ochronę tych danych w wypadku przekazania ich innym podmiotom oraz udzielamy informacji o instytucjach, z którymi należy
+się skontaktować w razie wątpliwości.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Od kiedy obowiązuje polityka prywatności strony STRONA WWW?</strong></p>
+<p>Polityka prywatności STRONA WWW wchodzi w życie w 1.01.2021 r.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Co to jest RODO?</strong></p>
+<p>RODO – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Dane osobowe – co to jest oraz jaki jest cel ich przetwarzania?</strong></p>
+<p>Dane osobowe udostępnione za pomocą formularza kontaktowego na stronie internetowej STRONA WWW, w korespondencji mailowej bądź rozmowy telefonicznej są wykorzystywane jedynie w celach kontaktowych, co oznacza, że nie są udostępniane dalej.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Formularz kontaktowy – jakie dane są nam potrzebne?</strong></p>
+<p>Potrzebujemy od Ciebie takich informacji jak: imię, adres e-mail, numer telefonu – słowem dane umożliwiające naszemu zespołowi kontakt zwrotny z Tobą.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Kto jest administratorem Twoich danych osobowych?</strong></p>
+<p>Jeżeli skorzystałeś z formularza kontaktowego zawartego na stronie STRONA WWW lub wysłałeś e-mail, to administratorem Twoich danych jest NAZWA FIRMY Z ADRESEM I DANYMI (NIP, REGON). Kontakt z administratorem możliwy jest przez adres e-mail ADRES EMAIL lub pisemnie na adres siedziby administratora z dopiskiem „Ochrona danych”. Administrator w celu należytej ochrony danych osobowych powołał Inspektora Ochrony Danych, z którym można się skontaktować pod adresem e-mail: ADRES EMAIL.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Jaki jest cel przetwarzanie danych osobowych?</strong></p>
+<p>Będziemy przetwarzać Twoje dane osobowe, abyś mógł korzystać z profesjonalnej pomocy prawnej.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Jakie są Twoje prawa wynikające z przetwarzania danych osobowych?</strong></p>
+<p>Masz prawo do żądania dostępu do treści swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, prawo do przenoszenia danych oraz prawo wniesienia sprzeciwu, cofnięcia zgody na przetwarzanie danych osobowych w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej cofnięciem.</p>
+
+<p>&nbsp;</p>
+
+<p>Podkreślamy, że podanie danych osobowych jest dobrowolne, ale niezbędne do otrzymania odpowiedzi na zadanie za pośrednictwem formularza kontaktowego pytanie.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Jaki jest czas przetrzymywania danych osobowych?</strong></p>
+<p>Dane osobowe będą przetwarzane przez okres niezbędny do udzielenia odpowiedzi na zadane za pośrednictwem formularza kontaktowego pytanie, a po tym okresie dla celów i przez okres oraz w zakresie wymaganym przez przepisy prawa lub dla zabezpieczenia ewentualnych roszczeń do momentu ich przedawnienia. W pozostałym zakresie dane osobowe będą przetwarzane do momentu cofnięcia wyrażonej zgody.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Czy masz prawo do wniesienia skargi?</strong></p>
+<p>Tak, masz prawo do wniesienia skargi do organu nadzorczego zajmującego się ochroną danych osobowych, zgodnie z obowiązującymi w danym czasie regulacjami i podziałem kompetencji Prezesa Urzędu Ochrony Danych Osobowych.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Zmiany naszej polityki prywatności</strong></p>
+<p>Zastrzegamy sobie prawo zmiany powyższej polityki prywatności przez opublikowanie nowej polityki prywatności na naszej stronie internetowej ADRES STRONY.</p>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="c-lightbox__cta">
+                <a href="#" class="o-btn o-btn--navy js-close">Zrozumiałem</a>
+            </div>
+            
+            <div class="c-lightbox__images c-lightbox__images--boy">
+                <img src="img/lightbox/boy-clipped.svg" alt="">
+            </div>
+            
+            <div class="c-lightbox__images c-lightbox__images--leafs">
+                <img src="img/lightbox/leafs-clipped.svg" alt="">
+            </div>
+        </div>
+    </div>
+
 
 <script src="js/app.js"></script></body>
 </body></html>

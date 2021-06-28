@@ -7,20 +7,31 @@
     }    
     
     .o-cols {
+
+        @media ( max-width: $smartphone + px ) {
+        	display: block;
+        }
+        
         &__item {
             @extend %rel;
             @extend %flex;
-            @extend %flex-column;
-
-            width: 50%;
+            @extend %flex-column;            
             padding: {
                 top: 90px;
+            }
+            
+            @media ( min-width: $smartphone + 1px ) {
+                width: 50%;
             }
             
             &:before {
                 @extend %abs-pseudo; z-index: -1;
                 top: 0;
                 width: 200%; height: 100%;
+                
+                @media ( max-width: $smartphone + px ) {
+                    transform: translateX(-10%);
+                }    
             }
             
             h2 {
@@ -30,14 +41,20 @@
             
             &:first-of-type {
                 background-color: $c-green-01;
-                padding-right: 42px;
+                
+                @media ( min-width: $smartphone_portrait + 1px ) {
+                    padding-right: 42px;
+                }
                 
                 &:before {
                     left: 0; 
-                    transform: translateX(-100%);
                     background-color: $c-green-01;
+                    
+                    @media ( min-width: $smartphone + 1px ) {
+                        transform: translateX(-99%);
+                    }
                 }
-                
+
                 .o-btn {
                     margin: auto 0 60px auto;
                 }
@@ -46,6 +63,10 @@
                     height: 270px;
                     margin-left: -255px;
                     padding-top: 69px;
+                    
+                    @media ( min-width: $smartphone + 1px ) and ( max-width: $base + $padding + px ) {
+                    	margin-left: calc(-225px + (100vw - 1280px)/6);
+                    }
                     
                     &:before {
                         left: 140px;
@@ -62,12 +83,24 @@
             
             &:last-of-type {
                 background-color: $c-blue-03;
-                padding-left: 42px;
+                
+                @media ( min-width: $smartphone + 1px ) {
+                    padding-left: 42px;
+                }
+                
+                
+                @media ( min-width: $smartphone_portrait + 1px ) and ( max-width: $smartphone + px ) {
+                	padding-right: 42px;
+                }
                 
                 &:before {
-                    right: 0; 
-                    transform: translateX(100%);
+                    
                     background-color: $c-blue-03;
+                    
+                    @media ( min-width: $smartphone + 1px ) {
+                        right: 0; 
+                        transform: translateX(99%);
+                    }
                 }
                 
                 .c-offer__footer {
@@ -83,13 +116,17 @@
                     margin-right: -190px;
                     padding-top: 98px;
                     
+                     @media ( min-width: $smartphone + 1px ) and  ( max-width: $base + $padding + px ) {
+                    	margin-right: calc(-190px + (100vw - 1280px)/6);
+                    }
+
                     &:before {
                         left: 0;
                         opacity: .4;
                         background-color: $c-blue-03;
                     }
                 }
-                
+
                 .o-num {
                     color: $c-blue-03;
                 }
@@ -97,6 +134,10 @@
         }
     }
     
+    .o-article {
+        text-align: justify;
+    }
+
     .o-image {
         @extend %rel;
         
@@ -127,5 +168,9 @@
         line-height: 1em;
         mix-blend-mode: multiply;
         opacity: 0.2;
+        
+        @media ( max-width: $base + $padding + px ) {
+        	@include responsive-font(base(280), rem(144));
+        }
     }
 }

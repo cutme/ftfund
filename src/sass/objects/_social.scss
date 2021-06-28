@@ -1,5 +1,15 @@
 .o-social {
     
+    a {
+        font-size: rem(16);
+    }
+    
+    li {
+        &:not(:last-child) {
+            padding-right: 25px;
+        }
+    }
+    
     ul {
         @extend %flex;
         
