@@ -3,6 +3,7 @@ import css from './sass/style.scss';
 
 require('./js/polyfills.js');
 require('./js/carousels.js');
+require('./js/cookies.js');
 require('./js/fonts.js');
 require('./js/footer.js');
 require('./js/helpers.js')

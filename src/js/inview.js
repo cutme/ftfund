@@ -2,18 +2,15 @@ import InView from 'inview';
 
 document.addEventListener('DOMContentLoaded',function() {
             
-    const anims = document.getElementsByClassName('anim');
-    
+    const anims = document.getElementsByClassName('anim'),
+          contact = document.getElementById('kontakt'),
+          phone = document.getElementById('phone');
+          
+    let contact_visible = false;
+
     window.animsInit = function() {        
 
         for (let i = 0; i < anims.length; i++) {
-
-/*
-            if (cutme.Helpers.isInView(anims[i])) {
-                anims[i].classList.add('anim--visible');
-                
-            }
-*/
 
             const inview = InView(anims[i], function(isInView) {
                 if (isInView) {
@@ -24,6 +21,22 @@ document.addEventListener('DOMContentLoaded',function() {
                 }
             });
         }
+        
+        
+        const inview_contact = InView(contact, function(isInView) {
+            if (isInView) {
+                if (contact_visible === false) {
+                    phone.classList.add('is-fadeout');
+                    contact_visible = true;
+                }
+
+            } else {
+                if (contact_visible === true) {
+                    phone.classList.remove('is-fadeout');
+                    contact_visible = false;
+                }
+            }
+        });
     };
 
 }, false);
